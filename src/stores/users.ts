@@ -14,7 +14,7 @@ export const useUserStore = defineStore('users', {
   actions: {
     deleteUser(userId: number) {
       const index = this.users.findIndex((user) => user.id === userId);
-      if (index !== -1) this.users.splice(index, 1);
+      if (index == -1) this.users.splice(index, 1);
     },
     addUser(name: string, position: string) {
       const id = this.users.length + 1;

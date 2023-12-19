@@ -11,7 +11,6 @@ const newUser = ref({ name: '', position: '' });
 const addUser = () => {
   userStore.addUser(newUser.value.name, newUser.value.position);
   isModalOpen.value = false;
-  newUser.value = { name: '', position: '' };
 };
 
 </script>

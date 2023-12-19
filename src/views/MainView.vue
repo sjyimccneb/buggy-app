@@ -15,8 +15,7 @@ const activity = ref<BoredResponse>({
 });
 
 const fetchActivity = async () => {
-  const response = await getActivity();
-  activity.value = response;
+  await getActivity();
 };
 
 onMounted(async () => {
