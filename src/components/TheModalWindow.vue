@@ -52,6 +52,7 @@ watch(() => props.show, (newValue) => {
 /* Modal Content Styling */
 .modal-content div {
     margin-bottom: 15px;
+    width: 30vw;
 }
 
 .modal-content label {

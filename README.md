@@ -1,25 +1,29 @@
-# BuggyApp
+## Buggy App
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple Vue 3 dashboard designed to assess the skills of junior Vue 3 developers.
 
-## Recommended IDE Setup
+The app contains the following pages:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+* **Home Page** : This page makes an API request to a remote server ([https://www.boredapi.com/api/activity](https://www.boredapi.com/api/activity)).
+* **Table Page** : This page features a simple table with action buttons, utilizing a Pinia store.
 
-## Type Support for `.vue` Imports in TS
+The app is built using Vitest, Pinia, Vite, Vue Router, TypeScript, and the Composition API.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+#### Main Tasks for Participants:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+**Home Page**
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+* [ ] Parse the activity data and convert it into human-friendly names.
+* [ ] Implement a condition to display a link only when a link is present in the data.
 
-## Customize configuration
+**Table Page**
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+* [ ] Add validation for adding a new user (validation for both name and position fields).
+* [ ] Replace the manual input field for job positions with a select dropdown.
+
+**Testing**
+
+* [ ] Write unit tests (vitest) for the newly created functions.
 
 ## Project Setup
 
@@ -51,18 +55,6 @@ npm run test:unit
 npm run test:e2e:dev
 ```
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+### Author
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Sergej Mueller

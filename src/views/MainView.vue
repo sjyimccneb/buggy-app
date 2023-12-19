@@ -35,6 +35,7 @@ onMounted(async () => {
         <p>Participants: {{ activity.participants }}</p>
         <p>Price: {{ activity.price }}</p>
         <p>Accessibility: {{ activity.accessibility }}</p>
+        <p>Information link: <a :href="activity.link">{{ activity.link }}</a></p> 
       </template>
     </TheCard>
 </template>

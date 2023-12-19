@@ -3,6 +3,6 @@
 
 <template>
     <header class="dashboard-header">
-      <h2>Buggy Dashboard</h2>
+      <h2>Buggy App</h2>
     </header>
   </template>
