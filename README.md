@@ -5,11 +5,18 @@ This is a simple Vue 3 dashboard designed to assess the skills of junior Vue 3 d
 The app contains the following pages:
 
 * **Home Page** : This page makes an API request to a remote server ([https://www.boredapi.com/api/activity](https://www.boredapi.com/api/activity)).
-* **Table Page** : This page features a simple table with action buttons, utilizing a Pinia store.
+  ![Home pageImage](image/README/home.png "Home page screenshot")
+* **Table Page** : This page features a simple table with action buttons, utilizing a Pinia store.![Table page](image/README/Table.png)
 
 The app is built using Vitest, Pinia, Vite, Vue Router, TypeScript, and the Composition API.
 
 #### Main Tasks for Participants:
+
+FInd and fix bugs (version with bugs is on branch 'dashboard-with-bugs')
+
+* [ ] refresh button on home page doesn't works
+* [ ] New user form's data isn't cleaned after closing modal
+* [ ] Delete user button doesnt works
 
 **Home Page**
 
@@ -20,6 +27,7 @@ The app is built using Vitest, Pinia, Vite, Vue Router, TypeScript, and the Comp
 
 * [ ] Add validation for adding a new user (validation for both name and position fields).
 * [ ] Replace the manual input field for job positions with a select dropdown.
+* [ ] Add 'edit user' button
 
 **Testing**
 
