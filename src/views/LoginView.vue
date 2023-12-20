@@ -40,18 +40,18 @@ const validateForm = (): boolean => {
     return true;
 };
 
-    const login = () => {
-        if (!validateForm()) {
-            return;
-        }
-        // TODO: login logic
-        // Redirect to home page after successful login
-        router.push('/');
+const login = () => {
+    if (!validateForm()) {
+        return;
     }
+    // TODO: login logic
+    // Redirect to home page after successful login
+    router.push('/');
+}
 
-    const goToRegister = () => {
-        router.push('/register');
-    }
+const goToRegister = () => {
+    router.push('/register');
+}
 </script>
 
 <template>
@@ -61,10 +61,10 @@ const validateForm = (): boolean => {
                 <h2>Login</h2>
                 <form class="login-form" @submit.prevent>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" v-model="email" />
+                    <input type="email" id="email" v-model="email" autocomplete="email" />
 
                     <label for="password">Password:</label>
-                    <input type="password" id="password" v-model="password" />
+                    <input type="password" id="password" v-model="password" autocomplete="current-password" />
 
                     <button class="my-2 h-8 btn-primary" @click="login">Login</button>
                 </form>
