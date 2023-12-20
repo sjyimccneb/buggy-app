@@ -7,6 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    DefaultLayout: typeof import('./src/components/layouts/DefaultLayout.vue')['default']
+    LayoutWrapper: typeof import('./src/components/layouts/LayoutWrapper.vue')['default']
+    MinimalLayout: typeof import('./src/components/layouts/MinimalLayout.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCard: typeof import('./src/components/TheCard.vue')['default']

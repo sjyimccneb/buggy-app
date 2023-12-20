@@ -12,7 +12,7 @@ const links = [
 
 <template>
   <header class="dashboard-header">
-    <h2>Buggy App</h2>
+    <h2>BUGGY app</h2>
     <div class="user-dropdown">
       <button class="user-button">
         <i class="mr-1 fa-regular fa-circle-user"></i>
@@ -33,8 +33,9 @@ const links = [
   justify-content: space-between; /* Aligns children to start and end of container */
   align-items: center;
   background-color: var(--header-bg-color);
-  padding: 10px 40px;
+  padding: 0px 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: var(--header-height);
 }
 
 .dashboard-header h2 {
@@ -85,7 +86,7 @@ const links = [
 
 @media screen and (max-width: 768px) {
   .dashboard-header {
-    padding: 5px 20px;
+    padding: 0px 20px;
   }
 }
 </style>
