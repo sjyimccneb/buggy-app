@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 :root {
   --main-bg-color: #b3b3b3;
   --header-bg-color: #3d944c;
@@ -8,14 +9,15 @@
   --button-primary-color: #3d944c;
   --button-primary-color-hover: #296332;
   --card-bg-color: #cacaca;
+  --header-height: 60px;
 }
 
 body,
 html {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Fira Mono', monospace;
   margin: 0;
   padding: 0;
-  height: 100%;
   background: var(--main-bg-color);
 }
 
@@ -29,17 +31,7 @@ html {
   display: flex;
   flex: 1;
   overflow: hidden;
-}
-
-.dashboard-header {
-  background-color: var(--header-bg-color);
-  padding: 10px 40px;
-  text-align: left;
-}
-
-.dashboard-header h2 {
-  margin: 0;
-  color: var(--main-text-color);
+  height: calc(100vh - var(--header-height));
 }
 
 .dashboard-content {
@@ -53,6 +45,7 @@ html {
   background-color: var(--card-bg-color);
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-card h3 {
@@ -65,42 +58,12 @@ html {
   justify-content: space-between;
   margin-bottom: 1rem;
 }
+
 .footer-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-}
-
-/* sidebar */
-.dashboard-sidebar {
-  width: 200px;
-  background-color: var(--sidebar-bg-color);
-  flex: 0 0 auto;
-  height: calc(100vh - 30px);
-}
-
-.sidebar-nav {
-  list-style: none;
-  font-size: large;
-  padding: 0;
-  text-align: center;
-}
-
-.sidebar-nav li {
-  padding: 10px;
-}
-
-.router-link-active {
-  color: var(--main-text-color-dark);
-  font-size: 1.1em;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.inactive {
-  color: var(--main-text-color-light);
-  text-decoration: none;
 }
 
 /* table */
@@ -133,6 +96,7 @@ html {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
