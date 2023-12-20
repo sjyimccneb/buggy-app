@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MainView from '@/views/MainView.vue';
 import TableView from '@/views/TableView.vue';
+import LoginView from '@/views/LoginView.vue';
 import PageNotFound from '@/views/errors/PageNotFound.vue';
 
 const routes = [
@@ -20,10 +21,15 @@ const routes = [
     component: MainView,
     meta: { layout: 'default' }
   },
+  // auth
+  {
+    path: '/login',
+    component: LoginView,
+    meta: { layout: 'minimal' }
+  },
   {
     path: '/logout',
-    component: MainView,
-    meta: { layout: 'default' }
+    redirect: '/login'
   },
   // errors
   {
