@@ -5,16 +5,53 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-const username = ref('');
+const email = ref('');
 const password = ref('');
 
-const login = () => {
-    // TODO: login logic
-    // Redirect to home page after successful login
-    router.push('/');
-}
+const validateEmail = (email: string): boolean => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+};
 
+const validatePassword = (pass: string): boolean => {
+    // Example: at least 6 characters
+    return pass.length >= 6;
+};
 
+const highlightInvalidInput = (inputId: string) => {
+    const input = document.getElementById(inputId);
+    if (input) {
+        input.classList.add('invalid');
+        input.addEventListener('input', () => {
+            input.classList.remove('invalid');
+        });
+    }
+};
+
+const validateForm = (): boolean => {
+    if (!validateEmail(email.value)) {
+        highlightInvalidInput('email');
+        return false;
+    }
+    if (!validatePassword(password.value)) {
+        highlightInvalidInput('password');
+        return false;
+    }
+    return true;
+};
+
+    const login = () => {
+        if (!validateForm()) {
+            return;
+        }
+        // TODO: login logic
+        // Redirect to home page after successful login
+        router.push('/');
+    }
+
+    const goToRegister = () => {
+        router.push('/register');
+    }
 </script>
 
 <template>
@@ -22,15 +59,18 @@ const login = () => {
         <Card>
             <template #content>
                 <h2>Login</h2>
-                <form class="login-form">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" v-model="username" />
+                <form class="login-form" @submit.prevent>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" v-model="email" />
 
                     <label for="password">Password:</label>
                     <input type="password" id="password" v-model="password" />
 
                     <button class="my-2 h-8 btn-primary" @click="login">Login</button>
                 </form>
+                <div class="register-container">
+                    <button class="register-button" @click="goToRegister">Register</button>
+                </div>
             </template>
         </Card>
     </div>
@@ -43,6 +83,7 @@ const login = () => {
     gap: 1rem;
     width: 30vw;
 }
+
 @media (max-width: 768px) {
     .login-form {
         width: 80vw;
@@ -54,7 +95,7 @@ const login = () => {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+
 }
 
 label {
@@ -63,5 +104,24 @@ label {
 
 input {
     padding: 0.5rem;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+}
+
+.register-button {
+    background-color: transparent;
+    border: none;
+    color: var(--main-text-color);
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.register-button:hover {
+    color: var(--button-primary-color-hover);
 }
 </style>

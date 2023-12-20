@@ -98,3 +98,8 @@ html {
   background-color: var(--button-primary-color-hover);
   /* Darker green on hover */
 }
+
+.invalid {
+  border: 2px solid rgb(224, 46, 46);
+
+}
