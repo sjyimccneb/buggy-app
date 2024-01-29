@@ -3,11 +3,11 @@ import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const isSidebarOpen = ref(false); // State to track sidebar visibility
+const isSidebarOpen = ref(false);
 
 const links = [
-  { name: 'Home', path: '/' },
-  { name: 'Table', path: '/table' },
+  { name: 'Home', path: '/', icon: 'fa-solid fa-house' },
+  { name: 'Table', path: '/table', icon: 'fa-solid fa-table' }
 ];
 
 const toggleSidebar = () => {
@@ -16,7 +16,7 @@ const toggleSidebar = () => {
 
 // Computed style for the toggle button
 const toggleButtonStyle = computed(() => ({
-  left: isSidebarOpen.value ? '220px' : '20px', // Adjust based on sidebar state
+  left: isSidebarOpen.value ? '220px' : '20px',
   bottom: '20px',
 }));
 </script>
@@ -28,18 +28,38 @@ const toggleButtonStyle = computed(() => ({
   <aside class="dashboard-sidebar" :class="{ open: isSidebarOpen }">
     <ul class="sidebar-nav">
       <li v-for="link in links" :key="link.path">
-        <router-link @click="toggleSidebar" :to="link.path"
-          :class="{ active: link.path === route.path, inactive: link.path !== route.path }">
-          {{ link.name }}
-        </router-link>
+        <div class="sidebar-item">
+          <router-link @click="toggleSidebar" :to="link.path"
+            :class="{ active: link.path === route.path, inactive: link.path !== route.path }">
+            <i :class="link.icon"></i>
+            {{ link.name }}
+          </router-link>
+        </div>
       </li>
     </ul>
+    <div class="author-name">
+      made by Sergej Müller
+    </div>
   </aside>
 </template>
 
 <style scoped>
-/* sidebar */
+.author-name {
+  position: absolute;
+  font-size: 0.7rem;
+  bottom: 50px;
+  left: 25px;
+  width: 100%;
+  text-align: left;
+  color: var(--main-text-color-light);
+}
+.sidebar-item {
+  display: flex;
+  justify-content: left;
+  padding-left: 50px;
+}
 .dashboard-sidebar {
+  position: relative;
   width: 200px;
   background-color: var(--sidebar-bg-color);
   flex: 0 0 auto;
@@ -49,18 +69,18 @@ const toggleButtonStyle = computed(() => ({
 
 .sidebar-nav {
   list-style: none;
-  font-size: large;
   padding: 0;
   text-align: center;
+  font-weight: bold;
 }
 
 .sidebar-nav li {
   padding: 10px;
+
 }
 
 .router-link-active {
   color: var(--main-text-color-dark);
-  font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;
 }
@@ -85,14 +105,12 @@ const toggleButtonStyle = computed(() => ({
   /* Button size */
   height: 50px;
   color: white;
-  font-size: 20px;
   /* Icon size */
   display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: left 0.3s;
-  /* Transition for sliding effect */
 }
 
 /* Menu Icon */
@@ -118,5 +136,6 @@ const toggleButtonStyle = computed(() => ({
     left: 20px;
     /* Adjust position when sidebar is open */
   }
-}</style>
+}
+</style>
   

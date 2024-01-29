@@ -18,3 +18,16 @@ const props = defineProps({
         </div>
     </div>
 </template>
+<style scoped>
+/* card */
+.dashboard-card {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card h3 {
+  margin: 0;
+}
+</style>
