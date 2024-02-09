@@ -25,7 +25,8 @@ onMounted(async () => {
 </script>
 
 <template>
-    <TheCard title="Ideas for activity">
+    <p>Welcome to the INFO 2341 BUGGY App! There are 7 bugs to find. Can you catch them all?</p>
+    <TheCard title="User Information">
     <template #title-buttons>
       <button class="btn-primary" @click="fetchActivity">Refresh</button>
     </template>

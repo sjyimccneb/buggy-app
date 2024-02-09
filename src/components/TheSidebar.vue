@@ -40,6 +40,10 @@ const toggleButtonStyle = computed(() => ({
     <div class="author-name">
       made by Sergej Müller
     </div>
+    <br>
+    <div class="author-name">
+      edited by Sue Yi
+    </div>
   </aside>
 </template>
 
@@ -47,7 +51,7 @@ const toggleButtonStyle = computed(() => ({
 .author-name {
   position: absolute;
   font-size: 0.7rem;
-  bottom: 50px;
+  /*bottom: 50px;*/
   left: 25px;
   width: 100%;
   text-align: left;

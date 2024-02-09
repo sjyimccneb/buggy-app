@@ -66,7 +66,7 @@ const goToRegister = () => {
                     <label for="password">Password:</label>
                     <input type="password" id="password" v-model="password" autocomplete="current-password" />
 
-                    <button class="my-2 h-8 btn-primary" @click="login">Login</button>
+                    <!-- <button class="my-2 h-8 btn-primary" @click="login">Login</button> -->
                 </form>
                 <div class="register-container">
                     <button class="register-button" @click="goToRegister">Register</button>

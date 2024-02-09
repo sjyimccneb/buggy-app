@@ -6,8 +6,14 @@
   <div class="error-text">Page not found</div>
   <div class="error-text mt-4">
     <button class="btn-primary" @click="$router.push('/')">
-      Go home
+      Go home*
     </button>
+  </div>
+  <div class="error-note">
+    <p>
+      *Pressing the button below will automatically log back in as admin.<br>
+      This is not a bug.
+    </p>
   </div>
 </template>
 <style scoped>
@@ -16,6 +22,12 @@
   color: var(--main-text-color-dark);
   text-align: center;
   margin-top: 30vh;
+}
+
+.error-note {
+  font-size: 1rem;
+  color: var(--main-text-color-dark);
+  text-align: center;
 }
 
 .error-text {
